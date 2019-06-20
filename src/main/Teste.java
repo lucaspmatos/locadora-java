@@ -1,5 +1,6 @@
 package main;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Teste {
@@ -37,6 +38,38 @@ public class Teste {
 		for(int i = 0; i < locadoras.size(); i++) {
 			System.out.println(locadoras.get(i).toString() + "\n");
 		}
+		
+		String arquivo = "teste.txt";
+		GravaArquivo gravador = new GravaArquivo();
+		
+		try {
+			gravador.locadoras(locadoras, arquivo);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		LeitorArquivo leitor = new LeitorArquivo();
+		
+		try {
+			ArrayList<Locadora> locadoras_2 = leitor.locadoras(arquivo);
+			
+			System.out.println("Locadoras gravadas: \n");
+			
+			for(int i = 0; i < locadoras_2.size(); i++) {
+				System.out.println(locadoras_2.get(i).toString() + "\n");
+			}
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 	}
 
 }

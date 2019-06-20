@@ -4,11 +4,12 @@
 package main;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  * A Classe Locadora.
  */
-public class Locadora {
+public class Locadora implements Serializable{
 	
 	/** Código estático sequêncial de código. */
 	private static int seq = 0;

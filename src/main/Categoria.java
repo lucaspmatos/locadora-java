@@ -3,10 +3,12 @@
  */
 package main;
 
+import java.io.Serializable;
+
 /**
  * A Classe Categoria.
  */
-public class Categoria {
+public class Categoria implements Serializable{
 	
 	/** Código estático sequêncial de código. */
 	private static int seq = 0;

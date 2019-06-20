@@ -3,10 +3,12 @@
  */
 package main;
 
+import java.io.Serializable;
+
 /**
  * A Classe Localizacao.
  */
-public class Localizacao {
+public class Localizacao implements Serializable{
 	
 	/** Código estático sequêncial de código. */
 	private static int seq = 0;
