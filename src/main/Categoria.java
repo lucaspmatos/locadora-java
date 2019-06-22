@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * A Classe Categoria.
  */
-public class Categoria implements Serializable{
+public class Categoria implements Serializable {
 	
 	/** Código estático sequêncial de código. */
 	private static int seq = 0;
@@ -28,8 +28,9 @@ public class Categoria implements Serializable{
 	 * @param direcao Define o tipo de direção do carro (Ex: Mecânica)
 	 * @param portas Define o número de portas do carro
 	 * @param ar_condicionado Define se o carro tem ar condicionado ou não
+	 * @throws NumeroInvalidoException 
 	 */
-	public Categoria(String nome, boolean automatico, String direcao, int portas, boolean ar_condicionado) {
+	public Categoria(String nome, boolean automatico, String direcao, int portas, boolean ar_condicionado) throws NumeroInvalidoException {
 		Categoria.seq = Categoria.seq + 1;
 		this.codigo = Categoria.seq;
 		this.nome = nome;
@@ -106,9 +107,14 @@ public class Categoria implements Serializable{
 	 * Sets the portas.
 	 *
 	 * @param portas the new portas
+	 * @throws NumeroInvalidoException 
 	 */
-	public void setPortas(int portas) {
+	public void setPortas(int portas) throws NumeroInvalidoException {
 		this.portas = portas;
+		
+		if (portas <= 1 && portas == 3 && portas <= 5) {
+			throw new NumeroInvalidoException("ERRO: O número de portas do veículo deve ser 2 ou 4!");
+		}
 	}
 
 	/**

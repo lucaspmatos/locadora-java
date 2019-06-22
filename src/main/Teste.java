@@ -5,8 +5,12 @@ import java.util.ArrayList;
 
 public class Teste {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumeroInvalidoException {
+		
 		ArrayList<Locadora> locadoras = new ArrayList<Locadora>();
+		
+		try {
+		
 		Categoria cat_basic = new Categoria("Basic", false, "Mecânica", 4, false);
 		Categoria cat_medium = new Categoria("Medium", false, "Hidráulica", 4, true);
 		Categoria cat_premium = new Categoria("Premium", true, "Elétrica", 4, true);
@@ -34,6 +38,10 @@ public class Teste {
 		facil.addVeiculo(veic_facil3);
 		facil.addVeiculo(veic_facil4);
 		locadoras.add(facil);
+		
+		} catch (NumeroInvalidoException nie) {
+			System.out.println(nie.getMessage());
+		}
 		
 		for(int i = 0; i < locadoras.size(); i++) {
 			System.out.println(locadoras.get(i).toString() + "\n");
@@ -67,9 +75,5 @@ public class Teste {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
-
 }

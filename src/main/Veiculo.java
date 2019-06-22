@@ -8,9 +8,9 @@ import java.io.Serializable;
 /**
  * A Classe Veiculo.
  */
-public class Veiculo implements Serializable{
+public class Veiculo implements Serializable {
 	
-	/** Código estático sequêncial de código. */
+	/** Código estático sequencial de código. */
 	private static int seq = 0;
 	
 	private int codigo;
@@ -30,8 +30,9 @@ public class Veiculo implements Serializable{
 	 * @param acessorios os acessórios do veículo
 	 * @param preco o preço de aluguel do veículo
 	 * @param categoria a categoria de locação do veículo
+	 * @throws NumeroInvalidoException 
 	 */
-	public Veiculo(String marca, String modelo, int ano, String acessorios, double preco, Categoria categoria) {
+	public Veiculo(String marca, String modelo, int ano, String acessorios, double preco, Categoria categoria) throws NumeroInvalidoException {
 		Veiculo.seq = Veiculo.seq + 1;
 		this.codigo = Veiculo.seq;
 		this.marca = marca;
@@ -91,9 +92,15 @@ public class Veiculo implements Serializable{
 	 * Seta um novo ano para o veículo
 	 *
 	 * @param ano o novo ano do veículo
+	 * @throws NumeroInvalidoException 
 	 */
-	public void setAno(int ano) {
+	public void setAno(int ano) throws NumeroInvalidoException {
 		this.ano = ano;
+		
+		if (ano < 0) {
+			throw new NumeroInvalidoException("ERRO: O ano do veículo não pode ser negativo!");
+		}
+		
 	}
 
 	/**
@@ -127,9 +134,14 @@ public class Veiculo implements Serializable{
 	 * Seta um novo preço de aluguel do veículo
 	 *
 	 * @param preco o novo preço de aluguel
+	 * @throws NumeroInvalidoException 
 	 */
-	public void setPreco(double preco) {
+	public void setPreco(double preco) throws NumeroInvalidoException {
 		this.preco = preco;
+		
+		if (preco <= 0.00) {
+			throw new NumeroInvalidoException("ERRO: O preço do veículo não pode ser zero ou negativo!");
+		}
 	}
 
 	/**
