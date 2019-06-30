@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Categoria implements Serializable {
 	
 	/** Código estático sequêncial de código. */
-	private static int seq = 0;
+	public static int seq = 0;
 	
 	private int codigo;
 	private String nome;
@@ -110,10 +110,10 @@ public class Categoria implements Serializable {
 	 * @throws NumeroInvalidoException 
 	 */
 	public void setPortas(int portas) throws NumeroInvalidoException {
-		this.portas = portas;
-		
-		if (portas <= 1 && portas == 3 && portas <= 5) {
+		if (portas <= 1 || portas == 3 || portas >= 5) {
 			throw new NumeroInvalidoException("ERRO: O número de portas do veículo deve ser 2 ou 4!");
+		}else {
+			this.portas = portas;
 		}
 	}
 
