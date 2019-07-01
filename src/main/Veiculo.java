@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Veiculo implements Serializable {
 	
 	/** Código estático sequencial de código. */
-	private static int seq = 0;
+	public static int seq = 0;
 	
 	private int codigo;
 	private String marca;

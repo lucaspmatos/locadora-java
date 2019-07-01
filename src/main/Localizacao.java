@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Localizacao implements Serializable {
 	
 	/** Código estático sequêncial de código. */
-	private static int seq = 0;
+	public static int seq = 0;
 	
 	private int codigo;
 	private String endereco;

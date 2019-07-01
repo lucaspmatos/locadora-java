@@ -35,8 +35,52 @@ public class InterfacePrincipal {
 			locadoras = new ArrayList<Locadora>();
 		}
 		// Coloca o sequêncial do código sincronizado com os conteúdos já salvos
-		Categoria.seq = categorias.size();
-		Locadora.seq = locadoras.size();
+		if(categorias.size() > 0) {
+			// Coloca na sequência o maior código cadastrado
+			int seq = 0;
+			for(int i = 0; i < categorias.size(); i++) {
+				if(categorias.get(i).getCodigo() > seq) {
+					seq = categorias.get(i).getCodigo();
+				}
+			}
+			Categoria.seq = seq;
+		}else {
+			Categoria.seq = 0;
+		}
+		if(locadoras.size() > 0) {
+			// Define a sequência das locadoras
+			int seq = 0;
+			for(int i = 0; i < locadoras.size(); i++) {
+				if(locadoras.get(i).getCodigo() > seq) {
+					seq = locadoras.get(i).getCodigo();
+				}
+			}
+			Locadora.seq = seq;
+			
+			// Define a sequência das localizações
+			seq = 0;
+			for(int i = 0; i < locadoras.size(); i++) {
+				if(locadoras.get(i).getLocalizacao().getCodigo() > seq) {
+					seq = locadoras.get(i).getLocalizacao().getCodigo();
+				}
+			}
+			Localizacao.seq = seq;
+			
+			// Define a sequência dos veículos
+			seq = 0;
+			for(int i = 0; i < locadoras.size(); i++) {
+				for(int j = 0; j < locadoras.get(i).getVeiculos().size(); j++) {
+					if(locadoras.get(i).getVeiculos().get(j).getCodigo() > seq) {
+						seq = locadoras.get(i).getVeiculos().get(j).getCodigo();
+					}
+				}
+			}
+			Veiculo.seq = seq;
+		}else {
+			Locadora.seq = 0;
+			Veiculo.seq = 0;
+			Localizacao.seq = 0;
+		}
 		
 		// Inicia a interface inicial
 		inicial(categorias, locadoras);
