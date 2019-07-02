@@ -2,11 +2,8 @@ package main;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
