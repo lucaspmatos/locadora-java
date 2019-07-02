@@ -71,7 +71,7 @@ public class InterfaceUsuario {
 		}
 		boolean positivo = true;
 		if(!msg.equals("")) {
-			msg = "Locadora(s) Encontradada(s): \n" + msg;
+			msg = "Locadora(s) Encontrada(s): \n" + msg;
 		}else {
 			positivo = false;
 		}

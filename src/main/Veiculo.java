@@ -94,11 +94,11 @@ public class Veiculo implements Serializable {
 	 * @param ano o novo ano do veículo
 	 * @throws NumeroInvalidoException 
 	 */
-	public void setAno(int ano) throws NumeroInvalidoException {
-		this.ano = ano;
-		
-		if (ano < 0) {
-			throw new NumeroInvalidoException("ERRO: O ano do veículo não pode ser negativo!");
+	public void setAno(int ano) throws NumeroInvalidoException {		
+		if (ano <= 0) {
+			throw new NumeroInvalidoException("ERRO: O ano do veículo não pode ser zero ou negativo!");
+		} else {
+			this.ano = ano;
 		}
 		
 	}
@@ -137,10 +137,10 @@ public class Veiculo implements Serializable {
 	 * @throws NumeroInvalidoException 
 	 */
 	public void setPreco(double preco) throws NumeroInvalidoException {
-		this.preco = preco;
-		
 		if (preco <= 0.00) {
 			throw new NumeroInvalidoException("ERRO: O preço do veículo não pode ser zero ou negativo!");
+		} else {
+			this.preco = preco;
 		}
 	}
 

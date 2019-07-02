@@ -11,7 +11,7 @@ import java.io.ObjectInputStream;
 /**
  * A Classe utilitária LeitorArquivo.
  */
-public class LeitorArquivo {
+public class LeitorArquivo implements Leitor {
 	
 	/**
 	 * Lê uma lista de locadoras de um arquivo

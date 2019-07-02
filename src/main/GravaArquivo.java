@@ -12,7 +12,7 @@ import java.util.ArrayList;
 /**
  * A Classe utilitária GravaArquivo.
  */
-public class GravaArquivo {
+public class GravaArquivo implements Gravador {
 	
 	/**
 	 * Grava uma lista de locadoras em um arquivo.
