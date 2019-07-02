@@ -152,15 +152,6 @@ public class Locadora implements Serializable {
 		String retorno = this.codigo + " - " + this.nome + " - " + this.cnpj + " - Tel: " + this.telefone;
 		retorno += "\nLocalização: " + this.localizacao.toString();
 		
-		if(veiculos.size() > 0) {
-			retorno += "\nVeículos";
-			for(int i = 0; i < this.veiculos.size(); i++) {
-				retorno += "\n" + this.veiculos.get(i).toString();
-			}
-		}else {
-			retorno += "\nSem nenhum veículo cadastrado";
-		}
-		
 		return retorno;
 	}
 }

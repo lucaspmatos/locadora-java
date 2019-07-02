@@ -174,8 +174,8 @@ public class Veiculo implements Serializable {
 	@Override
 	public String toString() {
 		String retorno = this.codigo + " - " + this.marca + " - " + this.modelo + " " + this.ano + " - Preço: " + this.preco;
-		retorno += "\nAcessórios: " + this.acessorios;
-		retorno += "\nCategoria: " + this.categoria.toString();
+		retorno += "\n      Acessórios: " + this.acessorios;
+		retorno += "\n      Categoria: " + this.categoria.toString();
 		return retorno;
 	}
 }

@@ -120,7 +120,7 @@ public class InterfacePrincipal {
         if (result == JOptionPane.YES_OPTION){ // Se ele escolher a interface de administrador
         	InterfaceAdministrador.inicial(categorias, locadoras);
         }else if(result == JOptionPane.NO_OPTION) { // Se ele escolher a interface de usuário
-        	System.out.println("Opção 2");
+        	InterfaceUsuario.inicial(categorias, locadoras);
         }else {
         	sair(categorias, locadoras);
         }
